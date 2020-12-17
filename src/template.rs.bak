@@ -1,0 +1,28 @@
+/* Advent of Code 2020
+
+--- Day ?: Blah Blah ---
+https://adventofcode.com/2020/day/? */
+
+pub fn part_one() -> bool {
+	return true
+}
+
+pub fn part_two() -> bool {
+	return true
+}
+
+#[cfg(test)]
+mod tests {
+	// Note this useful idiom: importing names from outer (for mod tests) scope.
+	use super::*;
+	
+	#[test]
+	fn test_part_one() {
+		assert_eq!(part_one(&map), true);
+	}
+	
+	#[test]
+	fn test_part_two() {
+		assert_eq!(part_two(&map), true);
+	}
+}
