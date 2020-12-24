@@ -9,6 +9,7 @@ mod binary_boarding;
 mod custom_customs;
 mod handy_haversacks;
 mod handheld_halting;
+mod encoding_error;
 
 fn read_file(filename: &str) -> String {
     let mut file = File::open(filename).expect("Failed to open file!");
@@ -160,5 +161,17 @@ fn main() {
 	
 	print!("Handheld Halting: Part Two");
 	println!("\tThe final value of the accumulator is: {}", handheld_halting::part_two(&program));
+	
+	//--- Day 9: Encoding Error ---
+	//https://adventofcode.com/2020/day/9
+	
+	//https://adventofcode.com/2020/day/9/input
+	let file = read_file("res/encoding_error_input.txt");
+	let data = file.split("\n").collect::<Vec<_>>();
+	
+	print!("Encoding Error: Part One");
+	println!("\tThe first invalid number in the XMAS data is: {}", encoding_error::part_one(&data, None));
+	
+	print!("Encoding Error: Part Two");
+	println!("\tThe sum of the smallest and largest numbers in the contiguious set which sums to the invalid number is: {}", encoding_error::part_two(&data, None));
 }
-
