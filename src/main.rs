@@ -7,6 +7,7 @@ mod toboggan_trajectory;
 mod passport_processing;
 mod binary_boarding;
 mod custom_customs;
+mod handy_haversacks;
 
 fn read_file(filename: &str) -> String {
     let mut file = File::open(filename).expect("Failed to open file!");
@@ -132,4 +133,17 @@ fn main() {
 		sum += custom_customs::part_two(&String::from(list[x]));
 	}
 	println!("\tThe number of questions to which EVERYONE answered \"yes\": {}", sum);
+	
+	//--- Day 7: Handy Haversacks ---
+	//https://adventofcode.com/2020/day/7
+	
+	//https://adventofcode.com/2020/day/7/input
+	let file = read_file("res/handy_haversacks_input.txt");
+	let rules = file.split("\n").collect::<Vec<_>>();
+	
+	print!("Handy Haversacks: Part One");
+	println!("\tThe number of bag colors that eventually contain at least one shiny gold bag is: {}", handy_haversacks::part_one(&rules));
+	
+	print!("Handy Haversacks: Part Two");
+	println!("\tThe number of bags required inside your shiny gold bag is: {}", handy_haversacks::part_two(&rules));
 }
