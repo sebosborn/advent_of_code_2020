@@ -8,6 +8,7 @@ mod passport_processing;
 mod binary_boarding;
 mod custom_customs;
 mod handy_haversacks;
+mod handheld_halting;
 
 fn read_file(filename: &str) -> String {
     let mut file = File::open(filename).expect("Failed to open file!");
@@ -146,4 +147,18 @@ fn main() {
 	
 	print!("Handy Haversacks: Part Two");
 	println!("\tThe number of bags required inside your shiny gold bag is: {}", handy_haversacks::part_two(&rules));
+	
+	//--- Day 8: Handheld Halting ---
+	//https://adventofcode.com/2020/day/8
+	
+	//https://adventofcode.com/2020/day/8/input
+	let file = read_file("res/handheld_halting_input.txt");
+	let program = file.split("\n").collect::<Vec<_>>();
+	
+	print!("Handheld Halting: Part One");
+	println!("\tThe last value of the accumulator before looping is: {}", handheld_halting::part_one(&program));
+	
+	print!("Handheld Halting: Part Two");
+	println!("\tThe final value of the accumulator is: {}", handheld_halting::part_two(&program));
 }
+
